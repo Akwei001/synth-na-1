@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Audio Synthesizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .synth-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .control {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+        select, button {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="synth-container">
+        <h1>Web Audio Synthesizer</h1>
+        <div class="control">
+            <label for="frequency">Frequency:</label>
+            <input type="range" id="frequency" min="20" max="2000" value="440">
+            <span id="frequencyValue">440 Hz</span>
+        </div>
+        <div class="control">
+            <label for="volume">Volume:</label>
+            <input type="range" id="volume" min="0" max="100" step="1" value="0.5">
+            <span id="volumeValue">0.5</span>
+        </div>
+        <div class="control">
+            <label for="waveform">Waveform:</label>
+            <select id="waveform">
+                <option value="sine">Sine</option>
+                <option value="square">Square</option>
+                <option value="sawtooth">Sawtooth</option>
+                <option value="triangle">Triangle</option>
+            </select>
+        </div>
+        <div class="control">
+            <button id="togglePlay">Start</button>
+        </div>
+    </div>
+    <script src="audio.js">
+        // JavaScript code goes here
+    </script>
+</body>
+</html>
