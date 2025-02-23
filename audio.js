@@ -23,6 +23,11 @@ function initAudio() {
     oscillator.frequency.setValueAtTime(frequencyControl.value, audioContext.currentTime);
     gainNode.gain.setValueAtTime(volumeControl.value, audioContext.currentTime);
 
+    const biquadFilter = audioCtx.createBiquadFilter();
+biquadFilter.type = 'lowpass';
+biquadFilter.frequency.setValueAtTime(200, audioCtx.currentTime + 1);
+oscillator.connect(biquadFilter);
+
     oscillator.start();
     isPlaying = true;
     togglePlayButton.textContent = 'Stop';
